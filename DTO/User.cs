@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Class1
+    public class User
     {
+        public int userId;
+        public string userName;
+        public double CHF;
+        public int cardId;
     }
 }

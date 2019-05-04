@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DTO
 {
-    public class Class1
+    public class Card
     {
+        public int cardId;
+        public int quota;
+        public int userId;
     }
 }

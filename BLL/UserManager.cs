@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Class1
+    class UserManager
     {
+
+        public int convertCHFToQuota(double chf)
+        {
+            int quota = 0;
+
+            return quota;
+        }
+
     }
 }
