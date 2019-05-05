@@ -11,18 +11,19 @@ namespace DAL
 {
     public class CardDB
     {
-        public string getUsernameByCardID(int cardId)
+        public static string getUsernameByUserID(int UID)
         {
             User tempUser;
+
             string username = "";
 
-            string connectionString = ConfigurationManager.ConnectionStrings["PaymentDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
 
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM Users WHERE cardId = " + cardId;
+                    string query = "Select * FROM Users WHERE UserId = " + UID;
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cn.Open();
 
@@ -38,9 +39,9 @@ namespace DAL
                                 tempUser.userName = (string)dr["UserName"];
 
                             if (dr["CHF"] != null)
-                                tempUser.CHF = (double)dr["CHF"];
+                                tempUser.CHF = (decimal)dr["CHF"];
 
-                            if (dr["IdCard"] != null)
+                            if (dr["CardId"] != null)
                                 tempUser.cardId = (int)dr["CardId"];
 
                             username = tempUser.userName;
@@ -56,6 +57,44 @@ namespace DAL
             }
 
             return username;
+        }
+
+        public static int setQuota(double chf, double uid)
+        {
+            int quota;
+            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(connectionString))
+                {
+                    string query = "UPDATE Cards " +
+                                   "Set Quota = Quota + (@CHF * 2) " +
+                                   "WHERE UserId = @UserId ";
+
+                    SqlCommand cmd = new SqlCommand(query, cn);
+
+                    cmd.Parameters.AddWithValue("@UserId", uid);
+                    cmd.Parameters.AddWithValue("@CHF", chf);
+
+
+                    try
+                    {
+                        cn.Open();
+                        quota = cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception e)
+                    {
+                        throw e;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return quota;
         }
 
     }

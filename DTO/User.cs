@@ -8,9 +8,21 @@ namespace DTO
 {
     public class User
     {
-        public int userId;
-        public string userName;
-        public double CHF;
-        public int cardId;
+        public int userId { get; set; }
+        public string userName { get; set; }
+        public decimal CHF { get; set; }
+        public int cardId { get; set; }
+
+        public override string ToString()
+        {
+            return
+                "UserId: \t" + userId + "\n" +
+                "userName: \t" + userName + "\n" +
+                "CHF:\t\t" + CHF + "\n" +
+                "cardId:\t\t" + cardId + "\n";
+        }
     }
+
+
 }
+

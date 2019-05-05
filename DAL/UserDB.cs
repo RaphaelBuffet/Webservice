@@ -5,28 +5,30 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace DAL
 {
-    class UserDB
+    public class UserDB
     {
-        public int addCHFByUID(string uid, double chf)
+        
+        public static int addCHFByUID(int uid, double chf)
         {
 
             int udResult = 0;
-            string connectionString = ConfigurationManager.ConnectionStrings["PaymentDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
 
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
                     string query = "UPDATE Users" +
-                                   " Set CHF = CHF + @CHF," +
-                                   " WHERE IdUser = @IdUser";
+                                   " Set CHF = CHF + @CHF " +
+                                   " WHERE UserId = @UserId";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
 
-                    cmd.Parameters.AddWithValue("@IdUser", uid);
+                    cmd.Parameters.AddWithValue("@UserId", uid);
                     cmd.Parameters.AddWithValue("@CHF", chf);
 
 
@@ -49,7 +51,9 @@ namespace DAL
             return udResult;
         }
 
-        public int addCHFByUserName(string userName, double chf)
+    
+
+        public static int addCHFByUserName(string userName, decimal chf)
         {
 
             int udResult = 0;
@@ -59,15 +63,14 @@ namespace DAL
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "UPDATE Users" +
-                                   " Set CHF = CHF + @CHF," +
+                    string query = "UPDATE Users " +
+                                   " Set CHF = CHF + @CHF " +
                                    " WHERE UserName = @UserName";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
 
                     cmd.Parameters.AddWithValue("@UserName", userName);
                     cmd.Parameters.AddWithValue("@CHF", chf);
-
 
                     try
                     {
@@ -86,6 +89,90 @@ namespace DAL
             }
 
             return udResult;
+        }
+
+        public static User getUserAccount(string username)
+        {
+            User tempUser = null;
+
+            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT * FROM Users WHERE UserName = '" + username + "'";
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            tempUser = new User();
+
+                            tempUser.userId = (int)dr["UserId"];
+
+                            if (dr["UserName"] != null)
+                                tempUser.userName = (string)dr["UserName"];
+
+                            if (dr["CHF"] != null)
+                                tempUser.CHF = (decimal)dr["CHF"];
+
+                            if (dr["CardId"] != null)
+                                tempUser.cardId = (int)dr["CardId"];
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return tempUser;
+        }
+
+        public static User getUserAccountById(int id)
+        {
+            User tempUser = null;
+
+            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT * FROM Users WHERE UserId = " + id;
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            tempUser = new User();
+
+                            tempUser.userId = (int)dr["UserId"];
+
+                            if (dr["UserName"] != null)
+                                tempUser.userName = (string)dr["UserName"];
+
+                            if (dr["CHF"] != null)
+                                tempUser.CHF = (decimal)dr["CHF"];
+
+                            if (dr["CardId"] != null)
+                                tempUser.cardId = (int)dr["CardId"];
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return tempUser;
         }
 
 
