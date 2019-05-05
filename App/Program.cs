@@ -30,7 +30,7 @@ namespace App
 
             Console.ReadKey();*/
 
-            int test = CardDB.setQuota(100.00, 1);
+            //int test = CardDB.setQuota(100.00, 1);
         }
     }
 }
