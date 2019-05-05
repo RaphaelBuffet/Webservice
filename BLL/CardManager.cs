@@ -8,9 +8,9 @@ namespace BLL
 {
     public class CardManager
     {
-        public double convertQuotaToCHF(string username, int quota)
+        public double convertQuotaToCHF(int quota)
         {
-            double chf = 0.00;
+            double chf = (double)(quota * 0.5);
 
             return chf;
 

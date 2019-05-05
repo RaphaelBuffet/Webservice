@@ -11,7 +11,7 @@ namespace BLL
 
         public int convertCHFToQuota(double chf)
         {
-            int quota = 0;
+            int quota = (int)(chf* 2);
 
             return quota;
         }
