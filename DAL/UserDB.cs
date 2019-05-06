@@ -12,7 +12,7 @@ namespace DAL
     public class UserDB
     {
         
-        public static int addCHFByUID(int uid, double chf)
+        public static int addCHFByUID(int uid, decimal chf)
         {
 
             int udResult = 0;

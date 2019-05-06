@@ -69,13 +69,13 @@ namespace DAL
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
                     string query = "UPDATE Cards " +
-                                   "Set Quota = Quota + (@CHF * 2) " +
+                                   "Set Quota = Quota + @Quota " +
                                    "WHERE UserId = @UserId ";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
 
                     cmd.Parameters.AddWithValue("@UserId", uid);
-                    cmd.Parameters.AddWithValue("@CHF", chf);
+                    cmd.Parameters.AddWithValue("@Quota", chf);
 
 
                     try
