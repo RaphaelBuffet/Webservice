@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using DAL;
+using BLL;
 
 namespace App
 {
@@ -13,22 +13,26 @@ namespace App
     {
         static void Main(string[] args)
         {
-            /*
-            User testUser =  DAL.UserDB.getUserAccount("SamuelPintodas");
+           /* string username = CardManager.getUsernameByUserID(1);
+            Console.Write(username);
+            Console.ReadKey();
+            */
+
+            User testUser =  BLL.UserManager.getUserAccount("SamuelPintodas");
             Console.Write(testUser.ToString());
 
             Console.ReadKey();
             
-            
-            int test = UserDB.addCHFByUID(1, 100);
+           
+            int test = UserManager.addCHFByUserName("SamuelPintodas", 100);
 
             Console.WriteLine(test);
             Console.ReadKey();
 
-            testUser = DAL.UserDB.getUserAccount("SamuelPintodas");
+            testUser = BLL.UserManager.getUserAccount("SamuelPintodas");
             Console.Write(testUser.ToString());
 
-            Console.ReadKey();*/
+            Console.ReadKey();
 
             //int test = CardDB.setQuota(100.00, 1);
         }

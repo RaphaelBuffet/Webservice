@@ -9,20 +9,23 @@ using DTO;
 
 namespace BLL
 {
-    class UserManager
+    public class UserManager
     {
 
-        public int convertCHFToQuota(double chf)
+        public static int convertCHFToQuota(decimal chf)
         {
             int quota = (int) (chf * 2);
 
             return quota;
         }
 
-        public static int addCHFByUID(int uid, double chf)
+        public static int addCHFByUID(int uid, decimal chf)
         {
             int udResult = 0;
 
+            int quota = convertCHFToQuota(chf);
+
+            CardManager.setQuota(quota, uid);
             UserDB.addCHFByUID(uid, chf);
 
             return udResult;
@@ -33,6 +36,10 @@ namespace BLL
         {
             int udResult = 0;
 
+            int userId = getUserAccount(userName).userId;
+            int quota = convertCHFToQuota(chf);
+
+            CardManager.setQuota(quota, userId);
             UserDB.addCHFByUserName(userName, chf);
 
             return udResult;
