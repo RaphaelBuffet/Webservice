@@ -59,7 +59,7 @@ namespace DAL
             return username;
         }
 
-        public static int setQuota(double chf, double uid)
+        public static int setQuota(double chf, int uid)
         {
             int quota;
             string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
+using DAL;
 
 namespace BLL
 {
@@ -16,7 +18,20 @@ namespace BLL
 
         }
 
+        public static string getUsernameByUserID(int UID)
+        {         
+            string userName = CardDB.getUsernameByUserID(UID);
 
+            return userName;
+        }
 
+        public static int setQuota(double chf, int uid)
+        {
+            int quota;
+
+            quota = CardDB.setQuota(chf, uid);
+
+            return quota;
+        }
     }
 }
