@@ -9,36 +9,44 @@ using REST;
 using DTO;
 using Newtonsoft.Json;
 using REST.Controllers;
-
+using System.Web.Script.Serialization;
 
 namespace App
 {
-    [RoutePrefix("api/users")]
+    [RoutePrefix("api/user")]
     class WebServiceClient_REST
     {
-        static string baseUri = "http://localhost:49871/api/users";
+        static string baseUri = "http://localhost:58760/api/user";
 
-
-        public static User getUserAccount(string username)
+        public static string getUserAccount(string username)
         {
-            string uri = baseUri;
+            string uri = baseUri + "/username/" + username;
             using (HttpClient httpClient = new HttpClient())
             {
-                Task<String> response = httpClient.GetStringAsync(uri);
-                return JsonConvert.DeserializeObject<User>(response.Result);
+                Task<string> response = httpClient.GetStringAsync(uri);
+                return JsonConvert.DeserializeObject<string>(response.Result);
             }
         }
 
 
         public static bool addCHFByUserName(string userName, decimal chf)
         {
-            string uri = baseUri;
-            User tempUser = getUserAccount(userName);
+            string uri = baseUri + "/addCHFByUserName";
+            string uName = userName;
+            decimal money = chf;
+
+            User tempUser = new User
+            {
+                userId = 1,
+                userName = uName,
+                CHF = money,
+                cardId = 1
+            };
             
             using (HttpClient httpClient = new HttpClient())
             {
-                string user = JsonConvert.SerializeObject(tempUser);
-                StringContent frame = new StringContent(user, Encoding.UTF8, "Application/json");
+                string jsonUser = JsonConvert.SerializeObject(tempUser);
+                StringContent frame = new StringContent(jsonUser, Encoding.UTF8, "Application/json");
                 Task<HttpResponseMessage> response = httpClient.PutAsync(uri, frame);
                 return response.Result.IsSuccessStatusCode;
             }
@@ -46,16 +54,37 @@ namespace App
 
         public static bool addCHFByUID(int UID, decimal chf)
         {
-            User tempUser = getUserAccount(username: CardsController.getUsernameByUserID(UID));
+            string uri = baseUri + "/addCHFByUID";
+            int userID = UID;
+            decimal money = chf;
 
-            string uri = baseUri;
+            User tempUser = new User
+            {
+                userId = UID,
+                userName = "",
+                CHF = money,
+                cardId = UID
+            };
+
             using (HttpClient httpClient = new HttpClient())
             {
-                string user = JsonConvert.SerializeObject(tempUser);
-                StringContent frame = new StringContent(user, Encoding.UTF8, "Application/json");
+                string jsonUser = JsonConvert.SerializeObject(tempUser);
+                StringContent frame = new StringContent(jsonUser, Encoding.UTF8, "Application/json");
                 Task<HttpResponseMessage> response = httpClient.PutAsync(uri, frame);
                 return response.Result.IsSuccessStatusCode;
             }
+
         }
+
+        public static string getUsernameByUserID(int UID)
+        {
+            string uri = baseUri + "/userId/" + UID;
+            using (HttpClient httpClient = new HttpClient())
+            {
+                Task<string> response = httpClient.GetStringAsync(uri);
+                return JsonConvert.DeserializeObject<string>(response.Result);
+            }
+        }
+
     }
 }

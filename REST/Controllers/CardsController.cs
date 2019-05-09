@@ -8,18 +8,18 @@ using DTO;
 
 namespace REST.Controllers
 {
-    [System.Web.Http.RoutePrefix("api/users")]
-    public class CardsController : ApiController
-    {
-        [System.Web.Http.Route("{UserId:int}")]
-        [System.Web.Http.HttpGet]
-        public static string getUsernameByUserID(int UID)
-        {
-            string username = CardManager.getUsernameByUserID(UID);
+    /*[System.Web.Http.RoutePrefix("api/user")]
+  public class CardsController : ApiController
+   {
+       [System.Web.Http.Route("{UserId:int}")]
+       [System.Web.Http.HttpGet]
+       public static string getUsernameByUserID(int UID)
+       {
+           string username = CardManager.getUsernameByUserID(UID);
 
-            return username;
-        }
+           return username;
+       }
 
 
-    }
+   }*/
 }

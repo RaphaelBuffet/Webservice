@@ -8,36 +8,55 @@ using DTO;
 
 namespace REST.Controllers
 {
-    [System.Web.Http.RoutePrefix("api/users")]
+    [System.Web.Http.RoutePrefix("api/user")]
     public class UsersController : ApiController
     {
-        [System.Web.Http.Route("{username:string}")]
+        [System.Web.Http.Route("username/{username}")]
         [System.Web.Http.HttpGet]
-        public User getUserAccount(string username)
+        public IHttpActionResult getUserAccount(string username)
         {
-            return BLL.UserManager.getUserAccount(username);
+            User tempUser = BLL.UserManager.getUserAccount(username);
+
+            string userString = "UserId: \t" + tempUser.userId + "\n" +
+                                "userName: \t" + tempUser.userName + "\n" +
+                                "CHF:\t\t" + tempUser.CHF + "\n" +
+                                "cardId:\t\t" + tempUser.cardId + "\n";
+
+            return Ok(userString);
         }
-
+        
+        [System.Web.Http.Route("addCHFbyUsername")]
         [System.Web.Http.HttpPut]
-        public IHttpActionResult addCHFByUserName([FromBody]string userName, decimal chf)
+        public IHttpActionResult addCHFByUserName([FromBody]User user)
         {
-            int udResult = UserManager.addCHFByUserName(userName, chf);
+            UserManager.addCHFByUserName(user.userName, user.CHF);
 
-            if (udResult == null)
+            if(user == null)
             {
                 return NotFound();
             }
 
-            return Ok(udResult);
+            return Ok(user);
         }
 
+        [System.Web.Http.Route("addCHFByUID")]
         [System.Web.Http.HttpPut]
-        public IHttpActionResult addCHFByUID([FromBody]int UID, decimal chf)
+        public IHttpActionResult addCHFByUID([FromBody]User user)
         {
-            int udResult = UserManager.addCHFByUID(UID, chf);
+            UserManager.addCHFByUID(user.userId, user.CHF);
 
-            return Ok(udResult);
+            return Ok(user);
 
         }
+
+        [System.Web.Http.Route("userId/{userId:int}")]
+        [System.Web.Http.HttpGet]
+        public IHttpActionResult getUsernameByUserID([FromBody]int UID)
+        {
+            string username = CardManager.getUsernameByUserID(UID);
+
+            return Ok(username);
+        }
+
     }
 }
