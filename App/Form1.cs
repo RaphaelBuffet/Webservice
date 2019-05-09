@@ -32,8 +32,6 @@ namespace App
             {
                 WebServiceClient_Soap.addCHFByUserName(username.Text, Convert.ToDecimal(chf.Text));
             }
-
-
         }
 
         private void getusernameByUID_Click(object sender, EventArgs e)

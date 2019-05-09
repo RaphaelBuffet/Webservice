@@ -8,18 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace App.LocaleReference {
+namespace App.ServiceReference1 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LocaleReference.ISoapPrinterService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ISoapPrinterService")]
     public interface ISoapPrinterService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISoapPrinterService/addCHFByUID", ReplyAction="http://tempuri.org/ISoapPrinterService/addCHFByUIDResponse")]
-        double addCHFByUID(int idUser, decimal amount);
+        bool addCHFByUID(int idUser, decimal amount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISoapPrinterService/addCHFByUID", ReplyAction="http://tempuri.org/ISoapPrinterService/addCHFByUIDResponse")]
-        System.Threading.Tasks.Task<double> addCHFByUIDAsync(int idUser, decimal amount);
+        System.Threading.Tasks.Task<bool> addCHFByUIDAsync(int idUser, decimal amount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISoapPrinterService/getUsernameByCardID", ReplyAction="http://tempuri.org/ISoapPrinterService/getUsernameByCardIDResponse")]
         string getUsernameByCardID(int cardId);
@@ -46,25 +46,25 @@ namespace App.LocaleReference {
         System.Threading.Tasks.Task<decimal> convertQuotaToCHFAsync(decimal amount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISoapPrinterService/addCHFByUsername", ReplyAction="http://tempuri.org/ISoapPrinterService/addCHFByUsernameResponse")]
-        double addCHFByUsername(string name, decimal amount);
+        bool addCHFByUsername(string name, decimal amount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISoapPrinterService/addCHFByUsername", ReplyAction="http://tempuri.org/ISoapPrinterService/addCHFByUsernameResponse")]
-        System.Threading.Tasks.Task<double> addCHFByUsernameAsync(string name, decimal amount);
+        System.Threading.Tasks.Task<bool> addCHFByUsernameAsync(string name, decimal amount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISoapPrinterService/getUserAccount", ReplyAction="http://tempuri.org/ISoapPrinterService/getUserAccountResponse")]
-        DTO.User getUserAccount(string name);
+        string getUserAccount(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISoapPrinterService/getUserAccount", ReplyAction="http://tempuri.org/ISoapPrinterService/getUserAccountResponse")]
-        System.Threading.Tasks.Task<DTO.User> getUserAccountAsync(string name);
+        System.Threading.Tasks.Task<string> getUserAccountAsync(string name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISoapPrinterServiceChannel : App.LocaleReference.ISoapPrinterService, System.ServiceModel.IClientChannel {
+    public interface ISoapPrinterServiceChannel : App.ServiceReference1.ISoapPrinterService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SoapPrinterServiceClient : System.ServiceModel.ClientBase<App.LocaleReference.ISoapPrinterService>, App.LocaleReference.ISoapPrinterService {
+    public partial class SoapPrinterServiceClient : System.ServiceModel.ClientBase<App.ServiceReference1.ISoapPrinterService>, App.ServiceReference1.ISoapPrinterService {
         
         public SoapPrinterServiceClient() {
         }
@@ -85,11 +85,11 @@ namespace App.LocaleReference {
                 base(binding, remoteAddress) {
         }
         
-        public double addCHFByUID(int idUser, decimal amount) {
+        public bool addCHFByUID(int idUser, decimal amount) {
             return base.Channel.addCHFByUID(idUser, amount);
         }
         
-        public System.Threading.Tasks.Task<double> addCHFByUIDAsync(int idUser, decimal amount) {
+        public System.Threading.Tasks.Task<bool> addCHFByUIDAsync(int idUser, decimal amount) {
             return base.Channel.addCHFByUIDAsync(idUser, amount);
         }
         
@@ -125,19 +125,19 @@ namespace App.LocaleReference {
             return base.Channel.convertQuotaToCHFAsync(amount);
         }
         
-        public double addCHFByUsername(string name, decimal amount) {
+        public bool addCHFByUsername(string name, decimal amount) {
             return base.Channel.addCHFByUsername(name, amount);
         }
         
-        public System.Threading.Tasks.Task<double> addCHFByUsernameAsync(string name, decimal amount) {
+        public System.Threading.Tasks.Task<bool> addCHFByUsernameAsync(string name, decimal amount) {
             return base.Channel.addCHFByUsernameAsync(name, amount);
         }
         
-        public DTO.User getUserAccount(string name) {
+        public string getUserAccount(string name) {
             return base.Channel.getUserAccount(name);
         }
         
-        public System.Threading.Tasks.Task<DTO.User> getUserAccountAsync(string name) {
+        public System.Threading.Tasks.Task<string> getUserAccountAsync(string name) {
             return base.Channel.getUserAccountAsync(name);
         }
     }

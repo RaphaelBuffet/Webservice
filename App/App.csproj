@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\LocaleReference\Reference.cs">
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -75,14 +75,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\LocaleReference\SoapPrinterService.wsdl" />
-    <None Include="Connected Services\LocaleReference\SoapPrinterService.xsd">
+    <None Include="Connected Services\ServiceReference1\SoapPrinterService.wsdl" />
+    <None Include="Connected Services\ServiceReference1\SoapPrinterService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\LocaleReference\SoapPrinterService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\LocaleReference\SoapPrinterService2.xsd">
+    <None Include="Connected Services\ServiceReference1\SoapPrinterService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -115,19 +112,19 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\LocaleReference\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\LocaleReference\SoapPrinterService.disco" />
+    <None Include="Connected Services\ServiceReference1\SoapPrinterService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\LocaleReference\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\LocaleReference\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\LocaleReference\Reference.svcmap">
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

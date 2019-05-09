@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="87ceeab6-fcec-4505-9366-2dc32efcfdf0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ffb12771-5845-437e-9c6a-b2eb96d6f34a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,10 @@
     <MetadataSource Address="http://localhost:58329/SoapPrinterService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SoapPrinterService.xsd" MetadataType="Schema" ID="47ea725c-e83c-4441-9d3a-b86da1cd4bc2" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SoapPrinterService.disco" MetadataType="Disco" ID="cc3be4be-aff2-4a74-8796-f464e8aec42d" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?disco" />
-    <MetadataFile FileName="SoapPrinterService1.xsd" MetadataType="Schema" ID="8e456384-4d01-42a4-90dd-4fb937d7aa2f" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?xsd=xsd2" />
-    <MetadataFile FileName="SoapPrinterService2.xsd" MetadataType="Schema" ID="49df4933-360e-487c-a435-a09aa5508b8f" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?xsd=xsd1" />
-    <MetadataFile FileName="SoapPrinterService.wsdl" MetadataType="Wsdl" ID="d590023b-1392-494f-8cc5-60f07c454007" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?wsdl" />
+    <MetadataFile FileName="SoapPrinterService.xsd" MetadataType="Schema" ID="fe0a275a-22e2-4080-92ab-84d3e2c9acb4" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SoapPrinterService.disco" MetadataType="Disco" ID="5cdc1cc0-58b3-4705-aee6-e32fc4fd464b" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?disco" />
+    <MetadataFile FileName="SoapPrinterService1.xsd" MetadataType="Schema" ID="7bed4b60-9613-4783-b79c-c6cb981852d9" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SoapPrinterService.wsdl" MetadataType="Wsdl" ID="07098f3d-080c-493f-9ef5-cc21a67d2154" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
