@@ -16,11 +16,12 @@ namespace REST.Controllers
         public IHttpActionResult getUserAccount(string username)
         {
             User tempUser = BLL.UserManager.getUserAccount(username);
-
+            int quota = BLL.UserManager.convertCHFToQuota(tempUser.CHF);
             string userString = "UserId: \t" + tempUser.userId + "\n" +
                                 "userName: \t" + tempUser.userName + "\n" +
                                 "CHF:\t\t" + tempUser.CHF + "\n" +
-                                "cardId:\t\t" + tempUser.cardId + "\n";
+                                "cardId:\t\t" + tempUser.cardId + "\n" +
+                                "Quota:\t\t" + quota+ "\n" ;
 
             return Ok(userString);
         }
