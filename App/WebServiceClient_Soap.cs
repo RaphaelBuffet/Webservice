@@ -20,5 +20,9 @@ namespace App
         {
             return true;
         }
+        public static string getUsernameByUserID(int UID)
+        {
+            return "pas encore";
+        }
     }
 }

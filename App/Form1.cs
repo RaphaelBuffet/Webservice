@@ -12,6 +12,8 @@ namespace App
 {
     public partial class Form1 : Form
     {
+
+
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +28,10 @@ namespace App
         {
             if(!switchWebService.Checked)
                 WebServiceClient_REST.addCHFByUserName(username.Text, Convert.ToDecimal(chf.Text));
+            else
+            {
+                WebServiceClient_Soap.addCHFByUserName(username.Text, Convert.ToDecimal(chf.Text));
+            }
 
 
         }
@@ -34,6 +40,10 @@ namespace App
         {
             if (!switchWebService.Checked)
                 usernameResult.Text = WebServiceClient_REST.getUsernameByUserID(Convert.ToInt32(userId.Text));
+            else
+            {
+                usernameResult.Text = WebServiceClient_Soap.getUsernameByUserID(Convert.ToInt32(userId.Text));
+            }
         }
 
 
@@ -51,6 +61,10 @@ namespace App
         {
             if (!switchWebService.Checked)
                 WebServiceClient_REST.addCHFByUID(Convert.ToInt32(userId.Text), Convert.ToDecimal(chf.Text));
+            else
+            {
+                WebServiceClient_Soap.addCHFByUID(Convert.ToInt32(userId.Text), Convert.ToDecimal(chf.Text));
+            }
         }
 
         private void switchWebService_CheckedChanged_1(object sender, EventArgs e)
