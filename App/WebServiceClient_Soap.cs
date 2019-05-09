@@ -8,21 +8,23 @@ namespace App
 {
     class WebServiceClient_Soap
     {
+        static LocaleReference.SoapPrinterServiceClient localClient = new LocaleReference.SoapPrinterServiceClient();
+        const string baseUri = "http://localhost:58760/";
         public static string GetUserAccount(string username)
         {
-            return "coucou";
+            return localClient.getUserAccount(username);
         }
         public static bool addCHFByUserName(string userName, decimal chf)
         {
-            return true;
+            return localClient.addCHFByUsername(userName,chf);
         }
         public static bool addCHFByUID(int UID, decimal chf)
         {
-            return true;
+            return localClient.addCHFByUID(UID,chf);
         }
         public static string getUsernameByUserID(int UID)
         {
-            return "pas encore";
+            return localClient.getUsernameByCardID(UID);
         }
     }
 }

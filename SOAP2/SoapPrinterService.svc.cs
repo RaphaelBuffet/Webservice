@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -11,9 +12,10 @@ namespace SOAP2
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez SoapPrinterService.svc ou SoapPrinterService.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class SoapPrinterService : ISoapPrinterService
     {
-        public double addCHFByUID(int idUser, decimal amount)
+        public Boolean addCHFByUID(int idUser, decimal amount)
         {
-            return BLL.UserManager.addCHFByUID(idUser,amount);
+            BLL.UserManager.addCHFByUID(idUser, amount);
+            return true;
         }
         public String getUsernameByCardID(int cardId)
         {
@@ -33,13 +35,22 @@ namespace SOAP2
     {
             return BLL.UserManager.convertCHFToQuota(amount);
         }
-        public double addCHFByUsername(String name, decimal amount)
+        public Boolean addCHFByUsername(String name, decimal amount)
         {
-            return BLL.UserManager.addCHFByUserName(name,amount);
+            BLL.UserManager.addCHFByUserName(name,amount);
+            return true;
         }
-        public DTO.User getUserAccount(String name)
+        public String getUserAccount(String name)
         {
-            return BLL.UserManager.getUserAccount(name);
+            User tempUser = BLL.UserManager.getUserAccount(name);
+            int quota = BLL.UserManager.convertCHFToQuota(tempUser.CHF);
+            string userString = "UserId: \t" + tempUser.userId + "\n" +
+                                "userName: \t" + tempUser.userName + "\n" +
+                                "CHF:\t\t" + tempUser.CHF + "\n" +
+                                "cardId:\t\t" + tempUser.cardId + "\n" +
+                                "Quota:\t\t" + quota + "\n";
+
+            return userString;
         }
 
 

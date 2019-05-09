@@ -12,7 +12,7 @@ namespace SOAP2
     public interface ISoapPrinterService
     {
         [OperationContract]
-        double addCHFByUID(int idUser, decimal amount);
+        Boolean addCHFByUID(int idUser, decimal amount);
 
         [OperationContract]
         String getUsernameByCardID(int cardId);
@@ -27,9 +27,9 @@ namespace SOAP2
         decimal convertQuotaToCHF(decimal amount);
 
         [OperationContract]
-        double addCHFByUsername(String name, decimal amount);
+        Boolean addCHFByUsername(String name, decimal amount);
 
         [OperationContract]
-        DTO.User getUserAccount(String name);
+        String getUserAccount(String name);
     }
 }

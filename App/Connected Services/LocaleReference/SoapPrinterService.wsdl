@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SoapPrinterService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:58329/SoapPrinterService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:58329/SoapPrinterService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:58329/SoapPrinterService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISoapPrinterService_addCHFByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:addCHFByUID" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_addCHFByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addCHFByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_getUsernameByCardID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUsernameByCardID" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_getUsernameByCardID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUsernameByCardIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_addQuotaByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:addQuotaByUsername" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_addQuotaByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addQuotaByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_convertCHFToQuota_InputMessage">
+    <wsdl:part name="parameters" element="tns:convertCHFToQuota" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_convertCHFToQuota_OutputMessage">
+    <wsdl:part name="parameters" element="tns:convertCHFToQuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_convertQuotaToCHF_InputMessage">
+    <wsdl:part name="parameters" element="tns:convertQuotaToCHF" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_convertQuotaToCHF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:convertQuotaToCHFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_addCHFByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:addCHFByUsername" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_addCHFByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addCHFByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_getUserAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserAccount" />
+  </wsdl:message>
+  <wsdl:message name="ISoapPrinterService_getUserAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserAccountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISoapPrinterService">
+    <wsdl:operation name="addCHFByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISoapPrinterService/addCHFByUID" message="tns:ISoapPrinterService_addCHFByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISoapPrinterService/addCHFByUIDResponse" message="tns:ISoapPrinterService_addCHFByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsernameByCardID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISoapPrinterService/getUsernameByCardID" message="tns:ISoapPrinterService_getUsernameByCardID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISoapPrinterService/getUsernameByCardIDResponse" message="tns:ISoapPrinterService_getUsernameByCardID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addQuotaByUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISoapPrinterService/addQuotaByUsername" message="tns:ISoapPrinterService_addQuotaByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISoapPrinterService/addQuotaByUsernameResponse" message="tns:ISoapPrinterService_addQuotaByUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="convertCHFToQuota">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISoapPrinterService/convertCHFToQuota" message="tns:ISoapPrinterService_convertCHFToQuota_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISoapPrinterService/convertCHFToQuotaResponse" message="tns:ISoapPrinterService_convertCHFToQuota_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="convertQuotaToCHF">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISoapPrinterService/convertQuotaToCHF" message="tns:ISoapPrinterService_convertQuotaToCHF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISoapPrinterService/convertQuotaToCHFResponse" message="tns:ISoapPrinterService_convertQuotaToCHF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addCHFByUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISoapPrinterService/addCHFByUsername" message="tns:ISoapPrinterService_addCHFByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISoapPrinterService/addCHFByUsernameResponse" message="tns:ISoapPrinterService_addCHFByUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISoapPrinterService/getUserAccount" message="tns:ISoapPrinterService_getUserAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISoapPrinterService/getUserAccountResponse" message="tns:ISoapPrinterService_getUserAccount_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISoapPrinterService" type="tns:ISoapPrinterService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addCHFByUID">
+      <soap:operation soapAction="http://tempuri.org/ISoapPrinterService/addCHFByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsernameByCardID">
+      <soap:operation soapAction="http://tempuri.org/ISoapPrinterService/getUsernameByCardID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addQuotaByUsername">
+      <soap:operation soapAction="http://tempuri.org/ISoapPrinterService/addQuotaByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertCHFToQuota">
+      <soap:operation soapAction="http://tempuri.org/ISoapPrinterService/convertCHFToQuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertQuotaToCHF">
+      <soap:operation soapAction="http://tempuri.org/ISoapPrinterService/convertQuotaToCHF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCHFByUsername">
+      <soap:operation soapAction="http://tempuri.org/ISoapPrinterService/addCHFByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserAccount">
+      <soap:operation soapAction="http://tempuri.org/ISoapPrinterService/getUserAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SoapPrinterService">
+    <wsdl:port name="BasicHttpBinding_ISoapPrinterService" binding="tns:BasicHttpBinding_ISoapPrinterService">
+      <soap:address location="http://localhost:58329/SoapPrinterService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
