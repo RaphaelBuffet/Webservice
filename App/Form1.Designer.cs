@@ -28,98 +28,156 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.getusernameByUID = new System.Windows.Forms.Button();
+            this.addCHFByUserName = new System.Windows.Forms.Button();
+            this.addCHFByUID = new System.Windows.Forms.Button();
+            this.usernameResult = new System.Windows.Forms.Label();
+            this.userId = new System.Windows.Forms.TextBox();
+            this.chf = new System.Windows.Forms.TextBox();
+            this.username = new System.Windows.Forms.TextBox();
+            this.getAccount = new System.Windows.Forms.Button();
+            this.Account = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.switchWebService = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // getusernameByUID
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(74, 356);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(110, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.getusernameByUID.Location = new System.Drawing.Point(368, 86);
+            this.getusernameByUID.Name = "getusernameByUID";
+            this.getusernameByUID.Size = new System.Drawing.Size(193, 23);
+            this.getusernameByUID.TabIndex = 1;
+            this.getusernameByUID.Text = "get username By user ID";
+            this.getusernameByUID.UseVisualStyleBackColor = true;
+            this.getusernameByUID.Click += new System.EventHandler(this.getusernameByUID_Click);
             // 
-            // button1
+            // addCHFByUserName
             // 
-            this.button1.Location = new System.Drawing.Point(368, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addCHFByUserName.Location = new System.Drawing.Point(368, 133);
+            this.addCHFByUserName.Name = "addCHFByUserName";
+            this.addCHFByUserName.Size = new System.Drawing.Size(193, 23);
+            this.addCHFByUserName.TabIndex = 2;
+            this.addCHFByUserName.Text = "add CHF By User Name";
+            this.addCHFByUserName.UseVisualStyleBackColor = true;
+            this.addCHFByUserName.Click += new System.EventHandler(this.addCHFByUserName_Click);
             // 
-            // button2
+            // addCHFByUID
             // 
-            this.button2.Location = new System.Drawing.Point(368, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addCHFByUID.Location = new System.Drawing.Point(368, 186);
+            this.addCHFByUID.Name = "addCHFByUID";
+            this.addCHFByUID.Size = new System.Drawing.Size(193, 23);
+            this.addCHFByUID.TabIndex = 3;
+            this.addCHFByUID.Text = "add CHF by User ID";
+            this.addCHFByUID.UseVisualStyleBackColor = true;
+            this.addCHFByUID.Click += new System.EventHandler(this.addCHFByUID_Click);
             // 
-            // button3
+            // usernameResult
             // 
-            this.button3.Location = new System.Drawing.Point(368, 186);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.usernameResult.AutoSize = true;
+            this.usernameResult.Location = new System.Drawing.Point(648, 87);
+            this.usernameResult.Name = "usernameResult";
+            this.usernameResult.Size = new System.Drawing.Size(77, 17);
+            this.usernameResult.TabIndex = 4;
+            this.usernameResult.Text = "User name";
+            // 
+            // userId
+            // 
+            this.userId.Location = new System.Drawing.Point(121, 87);
+            this.userId.Name = "userId";
+            this.userId.Size = new System.Drawing.Size(100, 22);
+            this.userId.TabIndex = 5;
+            // 
+            // chf
+            // 
+            this.chf.Location = new System.Drawing.Point(121, 186);
+            this.chf.Name = "chf";
+            this.chf.Size = new System.Drawing.Size(100, 22);
+            this.chf.TabIndex = 6;
+            // 
+            // username
+            // 
+            this.username.Location = new System.Drawing.Point(121, 137);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(100, 22);
+            this.username.TabIndex = 7;
+            // 
+            // getAccount
+            // 
+            this.getAccount.Location = new System.Drawing.Point(368, 242);
+            this.getAccount.Name = "getAccount";
+            this.getAccount.Size = new System.Drawing.Size(193, 23);
+            this.getAccount.TabIndex = 9;
+            this.getAccount.Text = "Get Account";
+            this.getAccount.UseVisualStyleBackColor = true;
+            this.getAccount.Click += new System.EventHandler(this.getAccount_Click);
+            // 
+            // Account
+            // 
+            this.Account.AutoSize = true;
+            this.Account.Location = new System.Drawing.Point(651, 137);
+            this.Account.Name = "Account";
+            this.Account.Size = new System.Drawing.Size(59, 17);
+            this.Account.TabIndex = 10;
+            this.Account.Text = "Account";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(567, 89);
+            this.label1.Location = new System.Drawing.Point(13, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "User Id";
             // 
-            // textBox1
+            // label2
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 142);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "User Name";
             // 
-            // textBox2
+            // label3
             // 
-            this.textBox2.Location = new System.Drawing.Point(74, 187);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 186);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "CHF";
             // 
-            // textBox3
+            // switchWebService
             // 
-            this.textBox3.Location = new System.Drawing.Point(74, 133);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 7;
+            this.switchWebService.AutoSize = true;
+            this.switchWebService.Location = new System.Drawing.Point(121, 359);
+            this.switchWebService.Name = "switchWebService";
+            this.switchWebService.Size = new System.Drawing.Size(67, 21);
+            this.switchWebService.TabIndex = 14;
+            this.switchWebService.Text = "REST";
+            this.switchWebService.UseVisualStyleBackColor = true;
+            this.switchWebService.CheckedChanged += new System.EventHandler(this.switchWebService_CheckedChanged_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.switchWebService);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.Account);
+            this.Controls.Add(this.getAccount);
+            this.Controls.Add(this.username);
+            this.Controls.Add(this.chf);
+            this.Controls.Add(this.userId);
+            this.Controls.Add(this.usernameResult);
+            this.Controls.Add(this.addCHFByUID);
+            this.Controls.Add(this.addCHFByUserName);
+            this.Controls.Add(this.getusernameByUID);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -128,14 +186,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button getusernameByUID;
+        private System.Windows.Forms.Button addCHFByUserName;
+        private System.Windows.Forms.Button addCHFByUID;
+        private System.Windows.Forms.Label usernameResult;
+        private System.Windows.Forms.TextBox userId;
+        private System.Windows.Forms.TextBox chf;
+        private System.Windows.Forms.TextBox username;
+        private System.Windows.Forms.Button getAccount;
+        private System.Windows.Forms.Label Account;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox switchWebService;
     }
 }
