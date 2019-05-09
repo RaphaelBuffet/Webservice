@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using BLL;
 
 namespace App
 {
@@ -13,28 +12,26 @@ namespace App
     {
         static void Main(string[] args)
         {
-           /* string username = CardManager.getUsernameByUserID(1);
-            Console.Write(username);
-            Console.ReadKey();
-            */
 
-            User testUser =  BLL.UserManager.getUserAccount("SamuelPintodas");
-            Console.Write(testUser.ToString());
+            string userTemp = WebServiceClient_REST.getUserAccount("LoanBuffet");
 
-            Console.ReadKey();
-            
-           
-            int test = UserManager.addCHFByUserName("SamuelPintodas", 100);
-
-            Console.WriteLine(test);
+            Console.WriteLine(userTemp);
             Console.ReadKey();
 
-            testUser = BLL.UserManager.getUserAccount("SamuelPintodas");
-            Console.Write(testUser.ToString());
+            /*WebServiceClient_REST.addCHFByUserName("LoanBuffet", 100);
+            Console.ReadKey();*/
 
+            WebServiceClient_REST.addCHFByUID(3, 200);
             Console.ReadKey();
 
-            //int test = CardDB.setQuota(100.00, 1);
+            userTemp = WebServiceClient_REST.getUserAccount("LoanBuffet");
+
+            Console.WriteLine(userTemp);
+            Console.ReadKey();
+
+            String userName = WebServiceClient_REST.getUsernameByUserID(4);
+            Console.WriteLine("Username: " + userName);
+            Console.ReadKey();
         }
     }
 }
