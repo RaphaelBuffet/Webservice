@@ -17,7 +17,32 @@ namespace App
             InitializeComponent();
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void switchWebService_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void addCHFByUserName_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void getusernameByUID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chf_TextChanged(object sender, EventArgs e)
         {
 
         }
