@@ -49,7 +49,7 @@ namespace REST.Controllers
 
         }
 
-        [System.Web.Http.Route("userId/{userId:int}")]
+        [System.Web.Http.Route("userId/{UID}")]
         [System.Web.Http.HttpGet]
         public IHttpActionResult getUsernameByUserID([FromBody]int UID)
         {

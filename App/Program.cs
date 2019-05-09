@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DTO;
 
 namespace App
@@ -33,28 +34,11 @@ namespace App
             Console.WriteLine("Username: " + userName);
             Console.ReadKey();*/
 
-            String username;
-            decimal CHF;
-            int userId;
-            int option;
-            int optionMethod;
-
-            // Menu
-            // Choose of the webService called
-            option = Console.Read();
             
-            // If we choose the web service REST
-            if (option == 1)
-            {
 
-            }
-            // If we choose the web service SOAP
-            else
-            {
-                
-            }
-
-
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }
