@@ -12,14 +12,14 @@ namespace App
     {
         static void Main(string[] args)
         {
-
+            /*
             string userTemp = WebServiceClient_REST.getUserAccount("LoanBuffet");
 
             Console.WriteLine(userTemp);
             Console.ReadKey();
 
-            /*WebServiceClient_REST.addCHFByUserName("LoanBuffet", 100);
-            Console.ReadKey();*/
+            WebServiceClient_REST.addCHFByUserName("LoanBuffet", 100);
+            Console.ReadKey();
 
             WebServiceClient_REST.addCHFByUID(3, 200);
             Console.ReadKey();
@@ -31,7 +31,30 @@ namespace App
 
             String userName = WebServiceClient_REST.getUsernameByUserID(4);
             Console.WriteLine("Username: " + userName);
-            Console.ReadKey();
+            Console.ReadKey();*/
+
+            String username;
+            decimal CHF;
+            int userId;
+            int option;
+            int optionMethod;
+
+            // Menu
+            // Choose of the webService called
+            option = Console.Read();
+            
+            // If we choose the web service REST
+            if (option == 1)
+            {
+
+            }
+            // If we choose the web service SOAP
+            else
+            {
+                
+            }
+
+
         }
     }
 }
