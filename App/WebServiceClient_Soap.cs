@@ -9,7 +9,6 @@ namespace App
     class WebServiceClient_Soap
     {
         static ServiceReference1.SoapPrinterServiceClient localClient = new ServiceReference1.SoapPrinterServiceClient();
-        const string baseUri = "http://localhost:58760/";
         public static string GetUserAccount(string username)
         {
             return localClient.getUserAccount(username);
