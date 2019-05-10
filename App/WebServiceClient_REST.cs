@@ -16,7 +16,8 @@ namespace App
     [RoutePrefix("api/user")]
     class WebServiceClient_REST
     {
-        static string baseUri = "http://localhost:58760/api/user";
+        //static string baseUri = "http://localhost:58760/api/user";
+        static string baseUri = "http://153.109.124.35:81/Rest-PintoBuffet/api/user";
 
         public static string getUserAccount(string username)
         {
