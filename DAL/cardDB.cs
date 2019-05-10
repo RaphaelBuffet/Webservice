@@ -17,7 +17,7 @@ namespace DAL
 
             string username = "";
 
-            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["624_2_BuffetPintoWebService"].ConnectionString;
 
             try
             {
@@ -62,7 +62,7 @@ namespace DAL
         public static int setQuota(double chf, int uid)
         {
             int quota;
-            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["624_2_BuffetPintoWebService"].ConnectionString;
 
             try
             {

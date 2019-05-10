@@ -16,7 +16,7 @@ namespace DAL
         {
 
             int udResult = 0;
-            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["624_2_BuffetPintoWebService"].ConnectionString;
 
             try
             {
@@ -57,7 +57,7 @@ namespace DAL
         {
 
             int udResult = 0;
-            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["624_2_BuffetPintoWebService"].ConnectionString;
 
             try
             {
@@ -95,7 +95,7 @@ namespace DAL
         {
             User tempUser = null;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["624_2_BuffetPintoWebService"].ConnectionString;
 
             try
             {
@@ -137,7 +137,7 @@ namespace DAL
         {
             User tempUser = null;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["PrintPaymentDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["624_2_BuffetPintoWebService"].ConnectionString;
 
             try
             {

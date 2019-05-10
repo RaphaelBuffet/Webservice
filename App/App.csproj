@@ -75,13 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\ServiceReference1\SoapPrinterService.wsdl" />
-    <None Include="Connected Services\ServiceReference1\SoapPrinterService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference1\SoapPrinterService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Connected Services\ServiceReference1\SoapPrinterService1.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DTO.User.datasource" />
   </ItemGroup>
@@ -113,9 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\SoapPrinterService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />

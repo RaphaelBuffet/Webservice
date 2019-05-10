@@ -19,13 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:58329/SoapPrinterService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://153.109.124.35:81/SOAP-PintoBuffet/SoapPrinterService.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SoapPrinterService.xsd" MetadataType="Schema" ID="fe0a275a-22e2-4080-92ab-84d3e2c9acb4" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SoapPrinterService.disco" MetadataType="Disco" ID="5cdc1cc0-58b3-4705-aee6-e32fc4fd464b" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?disco" />
-    <MetadataFile FileName="SoapPrinterService1.xsd" MetadataType="Schema" ID="7bed4b60-9613-4783-b79c-c6cb981852d9" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?xsd=xsd1" />
-    <MetadataFile FileName="SoapPrinterService.wsdl" MetadataType="Wsdl" ID="07098f3d-080c-493f-9ef5-cc21a67d2154" SourceId="1" SourceUrl="http://localhost:58329/SoapPrinterService.svc?wsdl" />
+    <MetadataFile FileName="SoapPrinterService1.wsdl" MetadataType="Wsdl" ID="eb039538-718f-470c-963d-c2731972ea92" SourceId="1" SourceUrl="http://153.109.124.35:81/SOAP-PintoBuffet/SoapPrinterService.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

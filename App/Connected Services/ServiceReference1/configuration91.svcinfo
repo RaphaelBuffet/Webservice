@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="40R2+XmQrdS7/UDg4sIbamFHxIk=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="/HYjsIHuORIW7Ui9ApfXhYbXJ6E=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ISoapPrinterService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ISoapPrinterService" contract="ServiceReference1.ISoapPrinterService" bindingType="basicHttpBinding" address="http://localhost:58329/SoapPrinterService.svc" bindingConfiguration="BasicHttpBinding_ISoapPrinterService">
+    <endpoint name="BasicHttpBinding_ISoapPrinterService" contract="ServiceReference1.ISoapPrinterService" bindingType="basicHttpBinding" address="http://153.109.124.35:81/SOAP-PintoBuffet/SoapPrinterService.svc" bindingConfiguration="BasicHttpBinding_ISoapPrinterService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:58329/SoapPrinterService.svc</serializedValue>
+          <serializedValue>http://153.109.124.35:81/SOAP-PintoBuffet/SoapPrinterService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
